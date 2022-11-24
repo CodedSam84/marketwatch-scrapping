@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Nov 17 07:14:00 2022
-
-@author: swuma
 """
 
 import requests
@@ -21,6 +18,7 @@ header = [data.text for data in table.find_all("th")]
 df = pd.DataFrame(columns = header)
 
 rows = soup.find_all("tr")[1:]
+print(rows)
 
 for row in rows:
     first_data = row.find_all("td")[0].find("div", class_="d3-o-club-shortname").text.strip()
